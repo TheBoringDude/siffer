@@ -21,6 +21,6 @@ nimble install https://github.com/TheBoringDude/siffer.git
   echo decodeRot13("uryyb JBEYQ")
   ```
 
-#### Inspiration: https://decode.fr
+#### Inspiration: https://www.dcode.fr
 
 ### &copy; TheBoringDude
