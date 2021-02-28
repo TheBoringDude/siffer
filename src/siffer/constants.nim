@@ -2,5 +2,5 @@
 
 import sequtils
 
-const UpperLetters* = toSeq('A'..'Z')
-const LowerLetters* = toSeq('a'..'z')
+const Letters* = toSeq('A'..'Z')
+const Numbers* = toSeq(0..9)
