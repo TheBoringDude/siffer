@@ -8,19 +8,17 @@ nimble install https://github.com/TheBoringDude/siffer.git
 
 ## Usage
 ### Available `procs`
-- `encodeRot13`
+- `rot13`
   ```nim
   import siffer
 
-  echo encodeRot13("hello WORLD")
+  echo rot13("hello WORLD")
   ```
-- `decodeRot13`
-  ```nim
-  import siffer
 
-  echo decodeRot13("uryyb JBEYQ")
-  ```
 
 #### Inspiration: https://www.dcode.fr
+
+### Huge thanks:
+- Thanks to [@Yardanico](https://github.com/Yardanico) for mentioning a better approach or method to achieving `Rot-13`.
 
 ### &copy; TheBoringDude

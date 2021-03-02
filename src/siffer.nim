@@ -1,33 +1,19 @@
 # siffer main utility functions
 
-import strutils, siffer/constants, siffer/utils
+import strutils
 
 
-proc encodeRot13*(x: string): string {.noSideEffect.} =
-  ## encodeRot13 encodes a string using the rot-13 cipher
+func rot13*(str: string): string =
+  ## rot13 ciphers a string using the rot-13 cipher
+  ## code is taken / based from @https://rosettacode.org/wiki/Rot-13#Nim
 
-  # get the shifted / rotated letters for easier parsing
-  let letters = shiftLetters(13)
-
-  for i in x:
-    if i.isLowerAscii():
-      result &= letters[constants.Letters.find(i.toUpperAscii())].toLowerAscii()
-    elif i.isUpperAscii():
-      result &= letters[constants.Letters.find(i)].toUpperAscii()
-    else:
-      result &= i
+  result = newString(str.len)
+  # iterate over each char in the string, giving its index and the char itself
+  for i, c in str:
+    result[i] =
+      case toLowerAscii(c)
+      of 'a'..'m': chr(ord(c) + 13)
+      of 'n'..'z': chr(ord(c) - 13)
+      else: c
 
 
-proc decodeRot13*(x: string): string {.noSideEffect.} =
-  ## decodeRot13 decodes cipher string using the rot-13 cipher
-
-  # get the shifted / rotated letters for easier parsing
-  let letters = shiftLetters(13)
-
-  for i in x:
-    if i.isLowerAscii():
-      result &= constants.Letters[letters.find(i.toUpperAscii())].toLowerAscii()
-    elif i.isUpperAscii():
-      result &= constants.Letters[letters.find(i)].toUpperAscii()
-    else:
-      result &= i

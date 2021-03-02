@@ -11,7 +11,7 @@ import siffer
 
 
 test "encode rot-13":
-  check encodeRot13("hello WORLD 123") == "uryyb JBEYQ 123"
+  check rot13("hello WORLD 123") == "uryyb JBEYQ 123"
 
 test "decode rot-13":
-  check decodeRot13("uununuun shaal!") == "hhahahha funny!"
+  check rot13("uununuun shaal!") == "hhahahha funny!"
